@@ -19,7 +19,7 @@ body {
 	overflow: hidden;
 } */
 
-/* .container {
+.container {
   position: absolute;
   width: 50%;
   transform: translate(-50%, -50%);
@@ -40,7 +40,7 @@ input[type="text"] {
   text-align: center;
   margin-top: 30px;
   border: 2px solid #202020;
-} */
+}
 
 button {
   /* outline: none;
