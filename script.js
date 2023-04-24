@@ -1,35 +1,58 @@
-// const mgs1 = document.getElementById("message1");
-// const mgs2 = document.getElementById("message2");
-// const mgs3 = document.getElementById("message3");
 
-// const answer = Math.floor(Math.random()*100) + 1;
-// const no_of_guesses = 0;
-// const guessed_nums = [];
+// document.getElementById("my_btn").disabled = true;
 
-// function play() {
-//   const user_guess = document.getElementById("guess").value;
-//   if(user_guess < 1 || user_guess > 100) {
-//     alert("please enter a number between 1 and 100.");
-//   }
-//     else {
-//       guessed_nums.push(user_guess):
-//       no_of_guesses += 1;
 
-//     if(user_guess < answer) {
-//     	mgs1.textContent = "Your guess is too low."
-//     	mgs2.textContent = "No. of guesses: " + no_of_guesses;
-//     	mgs3.textContent = "Guessed numbers are: " + guessed_nums;
-//     }
-//     else if(user_guess > answer) {
-//     	mgs1.textContent = "Your guess is too high."
-//     	mgs2.textContent = "No. of guesses: " + no_of_guesses;
-//     	mgs3.textContent = "Guessed numbers are: " + guessed_nums;
-//     }
-// 		else if (user_guess == answer) {
-// 			mgs1.textContent = "yeeehhhhh you win!";
-// 			mgs2.textContent = "The right guess was: " + answer;
-// 			mgs3.textContent = "You guessed it in "+ no_of_guesses + "guesses"
-// 			document.getElementById("my_btn").disabled = true;
-// 		}
-//   }
-// }
+const msg1 = document.getElementById("message1")
+const msg2 = document.getElementById("message2") 
+const msg3 = document.getElementById("message3") 
+const answer = Math.floor(Math.random() * 100) + 1;
+let no_of_guesses = 0;
+let numguess = 7;
+const guesses_num = [];
+
+function play() {
+  const user_guess = document.getElementById("guess").value;
+    if (user_guess < 1 || user_guess > 100) {
+    alert("Please Enter a number Between 1 to 100");
+    } else if(numguess!=0){
+    guesses_num.push(user_guess);
+    no_of_guesses += 1;
+    if (user_guess < answer) {
+      msg1.textContent = "Your Guess is Too low"
+      msg2.textContent = "No. Of Guesses : " + no_of_guesses;
+      msg3.textContent = "Guessed Number Are: " + guesses_num;
+    } else if (user_guess > answer) {
+      msg1.textContent = "Your Guess is Too High"
+      msg2.textContent = "No. Of Guesses : " + no_of_guesses;
+      msg3.textContent = "Guessed Number Are: " + guesses_num;
+    } else if (user_guess === answer) {
+      msg1.textContent = "CONGRATULATIONS!!! you won"
+      msg2.textContent = "the Number was " + answer 
+      msg3.textContent = " You guessd it in " + no_of_guesses + "Guesses";
+    }
+   numguess --;
+   if(numguess === 0){
+    msg1.textContent = `Game over! Number was ${answer}`
+   }
+  }
+}
+
+
+
+
+
+
+// const numguess = 1;
+
+// if(numguess === 7){
+// 		displayguess(user_guess);
+// 		displayMessage(`Game over! Number was ${answer}`);
+// 		end-Game();
+// 	}
+// 	else{
+// 		displayguess(user_guess);
+// 		checkguess(user_guess);
+// 	}
+
+
+
